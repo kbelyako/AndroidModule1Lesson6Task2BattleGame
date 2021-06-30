@@ -93,11 +93,7 @@ public class MainActivity extends AppCompatActivity {
         double unit2DeathLevel=unit1.health/10;
         Random rn = new Random();
         int randomDesicion=rn.nextInt(9 - 0 + 1) + 0;
-        // Log.d("MyLOG","randomDesicion="+randomDesicion);
-        //if (randomDesicion >0 && randomDesicion<10) {
 
-        // Log.d("MyLOG","Unit3 before fight health="+unit1.health +" Unit2 before fight health="+unit2.health);
-        //while ((unit1.health>1 && unit2.health>0) ||(unit1.health>0 && unit2.health>1)){
         while (unit1.health>unit1DeathLevel && unit2.health>unit1DeathLevel){
 
             // Log.d("MyLOG","Unit3 during fight hit="+unit1.hitWeight +" Unit2 during fight hit="+unit2.hitWeight);
@@ -112,12 +108,10 @@ public class MainActivity extends AppCompatActivity {
                 if(unit1.health>unit1DeathLevel && unit2.health>unit2DeathLevel)
                     unit2.attack(unit1);
             }
-            //     Log.d("MyLOG", "working") ;
-            //   Log.d("MyLOG","Unit1 during fight health="+unit1.health +" Unit2 during fight health="+unit2.health);
+
         }
         if (unit1.health<=unit1DeathLevel) {
             unit1.disable();
-            //   Log.d("MyLOG",unit2.category+" has destroyed/killed "+unit1.category)
         }
         if (unit2.health<=unit2DeathLevel) unit2.disable();
         String result="Unit3 after fight health="+unit1.health +" Unit4 after fight health="+unit2.health;
