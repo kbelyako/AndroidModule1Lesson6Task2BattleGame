@@ -80,15 +80,14 @@ public class MainActivity extends AppCompatActivity {
         }
 
         Log.d("MyLOG", groupOfBattleUnitsFight(navy1,navy2));
-       // Log.d("MyLOG", groupOfBattleUnitsFight(army1,army2));
+        Log.d("MyLOG", groupOfBattleUnitsFight(army1,army2));
 
     }
 
 
 
-    public String unitsFight (BattleUnit unit1, BattleUnit unit2){
-        //unit1.health=unit1.health;
-        //unit2.health=unit2.health;
+    public void unitsFight (BattleUnit unit1, BattleUnit unit2){
+
         double unit1DeathLevel=unit1.health/10;
         double unit2DeathLevel=unit1.health/10;
         Random rn = new Random();
@@ -96,10 +95,8 @@ public class MainActivity extends AppCompatActivity {
 
         while (unit1.health>unit1DeathLevel && unit2.health>unit1DeathLevel){
 
-            // Log.d("MyLOG","Unit3 during fight hit="+unit1.hitWeight +" Unit2 during fight hit="+unit2.hitWeight);
             if (randomDesicion <5) {
                 unit2.attack(unit1);
-                // Log.d("MyLOG","Unit1 during fight health="+unit1.health +" Unit2 during fight health="+unit2.health);
                 if(unit1.health>unit1DeathLevel && unit2.health>unit2DeathLevel)
                     unit1.attack(unit2);
             }
@@ -114,9 +111,9 @@ public class MainActivity extends AppCompatActivity {
             unit1.disable();
         }
         if (unit2.health<=unit2DeathLevel) unit2.disable();
-        String result="Unit3 after fight health="+unit1.health +" Unit4 after fight health="+unit2.health;
+        //String result=unit1.category+" after fight health="+unit1.health +unit2.category+" after fight health="+unit2.health;
 
-        return result;
+       // return result;
 
     }
 
